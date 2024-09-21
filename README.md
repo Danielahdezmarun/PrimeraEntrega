@@ -17,3 +17,19 @@ Lafarmacia.co es un emprendimiento Colombiano dedicado a la venta y comercializa
 ## Objetivo
 
 Diseñar e implementar una base de datos relaciones que permita la gestion y visualización de los domicilios de forma clara,eficiente y organizada en cada una de las sucursales. Debe ofrecer seguimiento detallado sobre información del cliente, asignacion de domiciliarios, sucursal de envio, stock en cada una de las bodegas o sucursales, permitiendo informacion real para la administración y así tomar deficiones estrategicas y opertavivas que mejoren la eficiencia en pro del crecimiento de la marca.
+
+## Descripción de la base de datos.
+
+A continuación se relaciona los principales elementos de la base de datos relacionados con la creación e información de clientes, asignación y creacion de domiciliarios, asignacion de sucursal, stock o inventario de sucursal, transacciones de ventas.
+
+Tablas:
+
+## 1.CLIENTE:
+
+Almacena información sobre los clientes que realizan compras a través de lafarmacia.co
+Atributos: IDCLIENTE, NOMBRE, TELEFONO, CORREO, DIRECCION.
+
+## 2. Categoria 
+
+
+Contiene información sobre cada una de las categorias que se distribuyen en lafarmacia.co
