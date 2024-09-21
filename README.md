@@ -31,5 +31,16 @@ Atributos: IDCLIENTE, NOMBRE, TELEFONO, CORREO, DIRECCION.
 
 ## 2. Categoria 
 
-
 Contiene información sobre cada una de las categorias que se distribuyen en lafarmacia.co
+Atributos: IDCATEGORIA, NOMBRE
+
+## 3. Producto
+
+Guarda información sobre cada uno de los productos que se distribuyen a través del e-commerce
+Atributos: IDPRODUCTO, NOMBRE,IDCATEGORIA, CANTIDAD
+
+## 4. Sucursal
+
+Proporciona información de cada sucursal o bodega de la marca
+
+
