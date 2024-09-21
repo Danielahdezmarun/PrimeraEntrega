@@ -11,6 +11,9 @@ Lafarmacia.co es un emprendimiento Colombiano dedicado a la venta y comercializa
 
 3.Gestion de Domiciliarios por sucursal:  Debe proporcionar información sobre cada uno de los domiciliarios dependiendo de cada una de las sucursales y pedidos asignados.
 
-4. Transacciones: Debe proporcionar las transacciones en cada una de las sucursales.
+4.Transacciones: Debe proporcionar las transacciones en cada una de las sucursales.
 
 
+## Objetivo
+
+Diseñar e implementar una base de datos relaciones que permita la gestion y visualización de los domicilios de forma clara,eficiente y organizada en cada una de las sucursales. Debe ofrecer seguimiento detallado sobre información del cliente, asignacion de domiciliarios, sucursal de envio, stock en cada una de las bodegas o sucursales, permitiendo informacion real para la administración y así tomar deficiones estrategicas y opertavivas que mejoren la eficiencia en pro del crecimiento de la marca.
