@@ -7,9 +7,9 @@ USE lafarmacia;
 
 CREATE TABLE CLIENTE (
   idcliente INT NOT NULL AUTO_ INCREMENT,
-  nombre VARCHAR(255) NOT NULL
-  telefono VARCHAR(20)
-  correo VARCHAR(255)
+  nombre VARCHAR(255) NOT NULL,
+  telefono VARCHAR(20),
+  correo VARCHAR(255),
   direccion VARCHAR(255),
  
   PRIMARY KEY (idcliente)
@@ -50,21 +50,18 @@ CREATE TABLE SUCURSAL (
 -- Crear tabla Inventario: Permite visualizar el inventario de cada producto en cada sucursal
 
 CREATE TABLE INVENTARIO (
-  idinventario INT AUTO INCREMENT,
-  idsucursal INT  
+  idinventario INT AUTO_INCREMENT,
+  idsucursal INT,  
   idproducto INT,
   cantidad INT,
   
   PRIMARY KEY (idinventario)
-  FOREIGN KEY (idsucursal) REFERENCES TABLE SUCURSAL
-  FOREIGN KEY (idproducto) REFERENCES TABLE PRODUCTO
-
 );
 
 -- Crear tabla domiciliarios: Esta tabla permite visualizar los domiciliarios asignados
 
 CREATE TABLE DOMICILIARIOS (
-  Iddomiciliario INT NOT NULL AUTO_ INCREMENT,
+  Iddomiciliario INT NOT NULL AUTO_INCREMENT,
   nombre VARCHAR(255) NOT NULL,
   telefono VARCHAR(20),
   
@@ -78,8 +75,8 @@ CREATE TABLE ORDEN (
   idcliente INT,
   idproducto INT,
   cantidad INT,
-  idsucursal INT
-  iddomiciliario
+  idsucursal INT,
+  iddomiciliario,
 
   PRIMARY KEY(idorden)
   FOREIGN KEY(idcliente) REFERENCES TABLE CLIENTE
@@ -88,5 +85,41 @@ CREATE TABLE ORDEN (
               (iddomiciliario) REFERENCES TABLE DOMICILIO 
 
 );
+
+-- Definicion de FK o claves foraneas
+
+-- Producto
+ALTER PRODUCTO ADD CONSTRAINT FK_PRODUCTO_CATEGORIA
+  FOREIGN KEY (idcategoria) REFERENCES CATEGORIA (idcategoria);
+
+-- Inventario
+
+ALTER TABLE INVENTARIO 
+  ADD CONSTRAINT FK_INVENTARIO_SUCURSAL
+  FOREIGN KEY (idsucursal) REFERENCES SUCURSAL (idsucursal);
+
+ALTER TABLE INVENTARIO
+  ADD CONSTRAINT FK_INVENTARIO_PRODUCTO
+  FOREIGN KEY (idproducto) REFERENCES PRODUCTO (idproducto);
+
+-- Orden
+
+ALTER TABLE ORDEN
+  ADD CONSTRAINT FK_ORDEN_CLIENTE
+  FOREIGN KEY (idcliente) REFERENCES CLIENTE (idcliente);
+
+ALTER TABLE ORDEN
+  ADD CONSTRAINT FK_ORDEN_PRODUCTO
+  FOREIGN KEY (idproducto) REFERENCES PRODUCTO (idproducto);
+
+ALTER TABLE ORDEN
+  ADD CONSTRAINT FK_ORDEN_SUCURSAL
+  FOREIGN KEY (idsucursal) REFERENCES SUCURSAL (idsucursal);
+
+ALTER TABLE ORDEN
+  ADD CONSTRAINT FK_ORDEN_DOMICILIOS
+  FOREIGN KEY (iddomicilio) REFERENCES DOMICILIOS (iddomicilio);
+
+
 
 
