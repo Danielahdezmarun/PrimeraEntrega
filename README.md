@@ -24,35 +24,35 @@ A continuación se relaciona los principales elementos de la base de datos relac
 
 Tablas:
 
-### 1.Cliente:
+### 1. Cliente:
 
 Almacena información sobre los clientes que realizan compras a través de lafarmacia.co
 Atributos: IDCLIENTE, NOMBRE, TELEFONO, CORREO, DIRECCION.
 
-### 2.Categoria 
+### 2. Categoria 
 
 Contiene información sobre cada una de las categorias que se distribuyen en lafarmacia.co
 Atributos: IDCATEGORIA, NOMBRE
 
-### 3.Producto
+### 3. Producto
 
 Guarda información sobre cada uno de los productos que se distribuyen a través del e-commerce
 Atributos: IDPRODUCTO, NOMBRE, IDCATEGORIA, CANTIDAD
 
-### 4.Sucursal
+### 4. Sucursal
 
 Proporciona información de cada sucursal o bodega de la marca
 Atributos: IDSUCURSAL, NOMBRE, DIRECCIÓN
 
-### 5.Inventario
+### 5. Inventario
 Almacena las cantidades y existencias de cada producto en cada sucursal
 Atributos: IDINVENTARIO, IDSUCURSAL, IDPRODUCTO, CANTIDAD
 
-### 6.Domiciliario
+### 6. Domiciliario
 Contiene información sobre los domiciliarios asignados.
 Atributos: IDDOMICILIARIO, NOMBRE,TELEFONO
 
-## 7.ORDEN
+## 7. ORDEN
 Almacena información relacionada a la orden de venta 
 Atributos: IDORDEN,IDCLIENTE,FECHA,IDPRODUCTO,CANTIDAD, IDSUCURSAL, IDDOMICILIARIO 
 
