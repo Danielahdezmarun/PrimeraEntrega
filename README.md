@@ -52,8 +52,8 @@ Atributos: IDINVENTARIO, IDSUCURSAL, IDPRODUCTO, CANTIDAD
 Contiene información sobre los domiciliarios asignados.
 Atributos: IDDOMICILIARIO, NOMBRE,TELEFONO
 
-## 7.Venta
-Almacena información relacionada a las ventas de cada sucursal.
-Atributos: IDVENTA,IDCLIENTE,FECHA,IDPRODUCTO,CANTIDAD, IDSUCURSAL, IDDOMICILIARIO 
+## 7.ORDEN
+Almacena información relacionada a la orden de venta 
+Atributos: IDORDEN,IDCLIENTE,FECHA,IDPRODUCTO,CANTIDAD, IDSUCURSAL, IDDOMICILIARIO 
 
 
