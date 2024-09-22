@@ -6,7 +6,7 @@ USE lafarmacia;
 -- Crear tabla CLIENTE: Esta tabla permite la creación de los cliente, PK es idcliente que corresponde al numero de cédula
 
 CREATE TABLE CLIENTE (
-  idcliente INT NOT NULL AUTO_ INCREMENT,
+  idcliente INT NOT NULL AUTO_INCREMENT,
   nombre VARCHAR(255) NOT NULL,
   telefono VARCHAR(20),
   correo VARCHAR(255),
@@ -24,16 +24,15 @@ CREATE TABLE CATEGORIA (
   PRIMARY KEY (idcategoria)
 );
 
--- Crear tabla PRODUCTO: Esta tabla identifica el producto y su precio unitario
+-- Crear tabla PRODUCTO: Esta tabla identifica el producto y su precio unitario, su FK es idcategoria
   
 CREATE TABLE PRODUCTO (
-  idproducto INT AUTO INCREMENT
+  idproducto INT AUTO_INCREMENT,
   nombre VARCHAR(255) NOT NULL,
-  idcategoria INT
-  preciounitario DECIMAL (10,2)
+  idcategoria INT,
+  preciounitario DECIMAL (10,2),
 
   PRIMARY KEY (idproducto)
-  FOREIGN KEY (idcategoria)REFERENCES TABLE CATEGORIA;
 );
 
 -- Crear tabla Sucursal: Esta tabla permite identificar las sucursales existentes de donde estan los productos solicitados por el cliente
@@ -47,7 +46,7 @@ CREATE TABLE SUCURSAL (
 
 );
   
--- Crear tabla Inventario: Permite visualizar el inventario de cada producto en cada sucursal
+-- Crear tabla Inventario: Permite visualizar el inventario de cada producto en cada sucursal, sus FK son idsucursal, idproducto
 
 CREATE TABLE INVENTARIO (
   idinventario INT AUTO_INCREMENT,
@@ -68,7 +67,7 @@ CREATE TABLE DOMICILIARIOS (
   PRIMARY KEY (iddomiciliario)
 );
 
-  -- Crear tabla Orden: Esta tabla visualiza la orden de compra y la información correlacionada
+  -- Crear tabla Orden: Esta tabla visualiza la orden de compra y la información correlacionada, sus FK son idcliente, idproducto, idsucursal, iddomiciliario
 CREATE TABLE ORDEN (
   idorden INT NOT NULL AUTO_INCREMENT,
   fecha DATE,
@@ -79,11 +78,6 @@ CREATE TABLE ORDEN (
   iddomiciliario,
 
   PRIMARY KEY(idorden)
-  FOREIGN KEY(idcliente) REFERENCES TABLE CLIENTE
-              (idproducto) REFERENCES TABLE PRODUCTO
-              (idsucursal) REFERENCES TABLE SUCURSAL
-              (iddomiciliario) REFERENCES TABLE DOMICILIO 
-
 );
 
 -- Definicion de FK o claves foraneas
